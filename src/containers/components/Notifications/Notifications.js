@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import './notifications.css';
+import "./Notifications.css";
 
 const Notification = props => (
-  <li className={'notification ' + (props.type || 'primary')}>
+  <li className={"notification " + (props.type || "primary")}>
     {props.text}
     <button className="close" onClick={() => props.removeFunc(props.id)}>
       &times;
@@ -17,7 +17,7 @@ const Notifications = props =>
       {props.notifications.map(notification => {
         return (
           <Notification
-            key={'notification-' + notification.id}
+            key={"notification-" + notification.id}
             removeFunc={props.removeFunc}
             {...notification}
           />

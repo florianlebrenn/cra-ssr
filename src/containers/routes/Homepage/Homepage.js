@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import Page from '../../components/page';
-import { addNotification } from '../../../../modules/notification';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import Page from "../../components/Page/Page";
+import { addNotification } from "../../../actions/notification";
 
 class Homepage extends Component {
   render() {
@@ -10,7 +10,7 @@ class Homepage extends Component {
       <Page title="Homepage" id="homepage">
         <h1>Welcome to our beautiful homepage</h1>
         <button
-          onClick={() => this.props.addNotification({ text: 'this is great' })}
+          onClick={() => this.props.addNotification({ text: "this is great" })}
         >
           Add notification
         </button>
