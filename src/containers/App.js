@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Link } from "react-router-dom";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import Menu from "./components/Menu/Menu";
 
 // Action Creators
 import { removeNotification } from "../actions/notification";
@@ -16,22 +17,16 @@ class App extends Component {
   render() {
     return (
       <div id="app">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/movie/tt0106062">Matrix movie</Link>
-          </li>
-          <li>
-            <Link to="/something">A broken page link</Link>
-          </li>
-        </ul>
-        <Notifications
-          notifications={this.props.notifications}
-          removeFunc={this.props.removeNotification}
-        />
-        <Routes />
+        <MuiThemeProvider>
+          <div>
+            <Menu />
+            <Notifications
+              notifications={this.props.notifications}
+              removeFunc={this.props.removeNotification}
+            />
+            <Routes />
+          </div>
+        </MuiThemeProvider>
       </div>
     );
   }
